@@ -1,0 +1,36 @@
+name: flood_nav_flutter
+description: Flood-aware navigation app using OpenStreetMap + OSRM.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # OSM map rendering (no API key needed for basic tiles)
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+  # Location tracking
+  geolocator: ^13.0.1
+
+  # HTTP calls to OSRM + your hazard backend
+  dio: ^5.7.0
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Polygon / geometry helpers (point-in-polygon, distance)
+  # (implemented manually in lib/logic/geo_utils.dart to avoid extra deps,
+  # but you can swap in a package like `turf` if you prefer)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
